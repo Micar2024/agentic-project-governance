@@ -37,7 +37,7 @@ Links, docs, issues, or prior decisions that inform this task. Examples:
 - `docs/api-spec.md`
 - PR #38 review comments
 
-## 5. Non-goals
+## 6. Non-goals
 
 What is explicitly out of scope, even if related? Examples:
 
@@ -45,7 +45,7 @@ What is explicitly out of scope, even if related? Examples:
 - Backward compatibility with v1 (not in scope)
 - Refactoring unrelated modules
 
-## 6. Expected deliverables
+## 7. Expected deliverables
 
 What files, artifacts, or outputs should the agent produce? Examples:
 
@@ -53,7 +53,7 @@ What files, artifacts, or outputs should the agent produce? Examples:
 - New test file `src/auth/login.test.ts`
 - Updated `docs/api.md`
 
-## 7. Output format
+## 8. Output format
 
 How should the agent deliver results? Examples:
 
@@ -61,7 +61,7 @@ How should the agent deliver results? Examples:
 - Draft PR for review
 - Files in workspace, no PR until approved
 
-## 8. Acceptance criteria
+## 9. Acceptance criteria
 
 What must be true for the task to be considered done? Use checkboxes.
 
@@ -69,7 +69,7 @@ What must be true for the task to be considered done? Use checkboxes.
 - [ ] Criterion 2
 - [ ] Criterion 3
 
-## 9. Verification plan
+## 10. Verification plan
 
 How will the result be verified? Include specific commands, tests, screenshots, diff inspection, or manual checks. Examples:
 
@@ -78,7 +78,7 @@ npm test
 grep -r "oldFunction" src/auth/  # should return nothing
 ```
 
-## 10. Rollback plan
+## 11. Rollback plan
 
 How to revert safely if the change causes problems. Examples:
 
@@ -86,7 +86,7 @@ How to revert safely if the change causes problems. Examples:
 - Restore backup file from `backups/`
 - Run `npm run db:rollback`
 
-## 11. Risk level
+## 12. Risk level
 
 Low / Medium / High
 
@@ -94,7 +94,7 @@ Low / Medium / High
 - **Medium**: Code change in one module, new template, non-breaking refactor.
 - **High**: Multi-module change, credential handling, database migration, external publishing, production-adjacent work.
 
-## 12. Human confirmation required?
+## 13. Human confirmation required?
 
 Yes / No. If yes, specify why.
 
@@ -107,7 +107,7 @@ Examples requiring human confirmation:
 - Destructive file operations
 - Scope expansion beyond original task
 
-## 13. Stop / escalation conditions
+## 14. Stop / escalation conditions
 
 When should the agent stop and escalate to a human? Examples:
 
@@ -118,7 +118,7 @@ When should the agent stop and escalate to a human? Examples:
 - Verification cannot be performed
 - Agent is unsure about safety or scope
 
-## 14. Agent self-check before execution
+## 15. Agent self-check before execution
 
 Before starting, the agent should confirm:
 
