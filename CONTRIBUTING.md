@@ -27,3 +27,14 @@ This repository accepts public, sanitized governance templates and fictional exa
 - Real company workflows without permission
 - Prompts that bypass human review
 - Automation that implies production approval without humans
+
+## How to submit a PR
+
+1. Fork the repository or create a branch from `main`.
+2. Keep one PR focused on one governance concept.
+3. Use fictional examples only. Do not submit real project data.
+4. Avoid private project details, secrets, credentials, customer data, production paths, or company-sensitive information.
+5. Keep Markdown ASCII-only where possible to avoid GitHub rendering issues.
+6. Include validation performed in the PR body (what you checked, what passed).
+7. Link a related issue when applicable.
+8. Wait for review before merge.

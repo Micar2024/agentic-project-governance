@@ -44,6 +44,17 @@ This template treats AI-assisted work as a governed delivery process, not a casu
 - Maintainers who need clear task packets, review packets, and acceptance evidence
 - Small teams that want safe defaults without heavy process
 
+## How this differs
+
+This project does not try to make agents smarter. It makes agent work reviewable.
+
+- **Not a prompt collection.** Prompt collections optimize agent output. This project optimizes for human review of agent work.
+- **Not an agent runtime.** Runtimes execute tasks. This project defines how tasks should be packaged, reviewed, and accepted before and after execution.
+- **Not an enterprise compliance framework.** Enterprise frameworks enforce policy. This project provides lightweight templates that any team can adopt without process overhead.
+- **Not a code quality tool.** Code quality tools check syntax and style. This project checks whether the right work was done, with the right evidence, and the right approvals.
+
+The focus is on task packets, PR evidence, acceptance reports, stop conditions, and human approval gates -- the governance layer that sits between "ask an AI" and "ship to production."
+
 ## Core principles
 
 ```text
@@ -131,11 +142,15 @@ Use fictional examples unless you have explicit permission to publish real proje
 - ASCII-only Markdown cleanup across all files
 
 ### v0.3.0 (planned)
-- Dependency audit template
-- GitHub Action for template validation
-- Schema for task packets
-- Multi-language README translations
-- Community-contributed examples
+
+Priority items for the next release:
+
+- **P0**: GitHub Action for template validation (advisory checks on pull requests)
+- **P0**: Task packet schema / validation configuration
+- **P1**: Dependency audit template
+- **P2**: Multi-language README translations
+
+Community-contributed examples welcome at any time.
 
 ## Contributing
 
