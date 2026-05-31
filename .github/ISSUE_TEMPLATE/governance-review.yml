@@ -1,0 +1,21 @@
+name: Governance Review
+description: Request review of a workflow, template, or boundary decision
+title: "[Governance Review]: "
+labels: ["governance"]
+body:
+  - type: textarea
+    id: decision
+    attributes:
+      label: Decision or workflow to review
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks and boundaries
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or context
