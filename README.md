@@ -2,7 +2,7 @@
 
 A lightweight governance template for AI-assisted software projects.
 
-Use this repository when your team uses coding agents, review agents, planning assistants, or multiple AI tools in the same project. It gives you task packets, PR review packets, acceptance reports, safety boundaries, and GitHub templates — so AI-assisted work is governed, not improvised.
+Use this repository when your team uses coding agents, review agents, planning assistants, or multiple AI tools in the same project. It gives you task packets, PR review packets, acceptance reports, safety boundaries, and GitHub templates -- so AI-assisted work is governed, not improvised.
 
 ## Why this exists
 
@@ -78,6 +78,10 @@ flowchart LR
   F --> G[Human decision]
 ```
 
+## Workflow diagrams
+
+For detailed channel selection, escalation triggers, and human approval gates, see [docs/workflow.md](docs/workflow.md).
+
 ## Repository layout
 
 ```text
@@ -104,7 +108,7 @@ releases/    Release notes
 
 ## Examples
 
-See `examples/minimal-agentic-project/` for a fictional documentation website task that demonstrates the full workflow: task packet → PR review → acceptance report.
+See `examples/minimal-agentic-project/` for a fictional documentation website task that demonstrates the full workflow: task packet -> PR review -> acceptance report.
 
 ## Safety note
 
@@ -141,7 +145,7 @@ See `CONTRIBUTING.md`. We accept public, sanitized governance templates and fict
 
 ## Status
 
-v0.1.0 — draft template release. Not a runtime, not a production system, not an enterprise compliance framework, and not a production safety certification.
+v0.1.0 -- draft template release. Not a runtime, not a production system, not an enterprise compliance framework, and not a production safety certification.
 
 ## License
 
