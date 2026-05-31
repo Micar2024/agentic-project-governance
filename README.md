@@ -37,23 +37,11 @@ This template treats AI-assisted work as a governed delivery process, not a casu
 - Not a production automation framework
 - Not a place to store private project details, secrets, credentials, or business-sensitive information
 
-## Who this is for
-
-- Teams using coding agents, AI IDEs, review assistants, and planning tools
-- Developers who want to move from "chat with AI" to "governed AI delivery"
-- Maintainers who need clear task packets, review packets, and acceptance evidence
-- Small teams that want safe defaults without heavy process
-
 ## How this differs
 
 This project does not try to make agents smarter. It makes agent work reviewable.
 
-- **Not a prompt collection.** Prompt collections optimize agent output. This project optimizes for human review of agent work.
-- **Not an agent runtime.** Runtimes execute tasks. This project defines how tasks should be packaged, reviewed, and accepted before and after execution.
-- **Not an enterprise compliance framework.** Enterprise frameworks enforce policy. This project provides lightweight templates that any team can adopt without process overhead.
-- **Not a code quality tool.** Code quality tools check syntax and style. This project checks whether the right work was done, with the right evidence, and the right approvals.
-
-The focus is on task packets, PR evidence, acceptance reports, stop conditions, and human approval gates -- the governance layer that sits between "ask an AI" and "ship to production."
+Prompt collections optimize agent output. Agent runtimes execute tasks. Code quality tools check syntax. This project checks whether the right work was done, with the right evidence, and the right approvals -- the governance layer between "ask an AI" and "ship to production."
 
 ## Core principles
 
@@ -122,9 +110,18 @@ releases/    Release notes
 | `templates/postmortem.md` | Post-incident review |
 | `templates/design-review.md` | Design review for UX, copy, safety, and interaction changes |
 
+## Key docs
+
+- `docs/workflow.md` -- channel selection, escalation triggers, and human approval gates
+- `docs/template-validation-guide.md` -- checklists for task packets, PR review packets, and acceptance reports
+- `docs/safety-boundaries.md` -- safety rules for private data, credentials, production systems, and publishing
+
 ## Examples
 
-See `examples/minimal-agentic-project/` for a fictional documentation website task that demonstrates the full workflow: task packet -> PR review -> acceptance report.
+- `examples/minimal-agentic-project/` -- minimal documentation workflow (task packet -> PR review -> acceptance report)
+- `examples/cli-tool-bugfix/` -- fast-to-standard channel escalation
+- `examples/dashboard-ui-safety-review/` -- human approval gate for user-facing safety changes
+- `examples/documentation-sprint/` -- multi-task documentation sprint and release readiness
 
 ## Safety note
 
@@ -134,14 +131,11 @@ Use fictional examples unless you have explicit permission to publish real proje
 
 ## Roadmap
 
-### v0.2.0 (current)
-- Additional fictional examples: channel escalation, human approval, multi-task aggregation
-- Workflow diagrams for fast channel vs standard channel with Mermaid
-- Template validation guide for task packets, PR review packets, and acceptance reports
-- Design review template for UX, copy, safety, and interaction changes
-- ASCII-only Markdown cleanup across all files
+- v0.1.0: initial draft template release
+- v0.2.0: released (examples, workflow diagrams, template validation guide, design review template)
+- v0.2.1: main branch documentation polish (not tagged)
 
-### v0.3.0 (planned)
+### v0.3.0 candidates
 
 Priority items for the next release:
 
@@ -158,7 +152,9 @@ See `CONTRIBUTING.md`. We accept public, sanitized governance templates and fict
 
 ## Status
 
-v0.2.0 -- usability and review workflow update. Not a runtime, not a production system, not an enterprise compliance framework, and not a production safety certification.
+Latest release: v0.2.0 - usability and review workflow update. Main branch includes post-release documentation polish.
+
+Not a runtime, not a production system, not an enterprise compliance framework, and not a production safety certification.
 
 ## License
 
