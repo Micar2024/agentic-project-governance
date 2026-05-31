@@ -25,7 +25,7 @@ This template treats AI-assisted work as a governed delivery process, not a casu
 - Templates for AI-agent tasks, PR review packets, and acceptance reports
 - Safety boundaries for private data, credentials, production systems, and external publishing
 - GitHub issue and pull request templates
-- Minimal fictional examples
+- Fictional examples covering common governance scenarios
 
 ## What this is not
 
@@ -63,7 +63,6 @@ Private facts stay private.
 3. Let an implementation agent work only within the approved scope.
 4. Use `templates/pr-review-packet.md` for independent review.
 5. Use `templates/acceptance-report.md` before closing the task.
-6. Keep private or sensitive details out of public files.
 
 ## Minimal workflow
 
@@ -115,6 +114,9 @@ releases/    Release notes
 - `docs/workflow.md` -- channel selection, escalation triggers, and human approval gates
 - `docs/template-validation-guide.md` -- checklists for task packets, PR review packets, and acceptance reports
 - `docs/safety-boundaries.md` -- safety rules for private data, credentials, production systems, and publishing
+- `docs/roles.md` -- role definitions for human and AI collaborators
+- `docs/agent-collaboration-model.md` -- how agents collaborate on governed work
+- `docs/github-as-source-of-truth.md` -- why GitHub is the source of truth for project state
 
 ## Examples
 
@@ -125,9 +127,7 @@ releases/    Release notes
 
 ## Safety note
 
-Do not put secrets, credentials, private repository links, production configuration, internal paths, customer data, financial data, or company-sensitive information in public examples or templates.
-
-Use fictional examples unless you have explicit permission to publish real project details.
+See `docs/safety-boundaries.md` for detailed rules on private data, credentials, production systems, and publishing.
 
 ## Roadmap
 
