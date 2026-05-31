@@ -1,4 +1,4 @@
-# Acceptance Report — Dashboard UI Safety Review
+# Acceptance Report -- Dashboard UI Safety Review
 
 ## Requested task
 
@@ -9,19 +9,19 @@ Standardize the SitePulse dashboard's `StatusBadge` component to use design syst
 - Updated `StatusBadge.tsx` to use design system v2.1 color tokens, typography, and spacing.
 - Preserved all 3 safety-critical strings verbatim:
   - `"Critical: service unreachable"` (Down state)
-  - `"Data may be delayed — verify manually"` (Unknown state)
+  - `"Data may be delayed -- verify manually"` (Unknown state)
   - `"Do not rely on cached data during degraded state"` (Degraded state)
-- Overrode the design system's text-length recommendation for safety reasons — documented with a source comment.
+- Overrode the design system's text-length recommendation for safety reasons -- documented with a source comment.
 - Updated `StatusBadge.test.tsx` to test against new design tokens.
 - Updated `badge.css` to use `var(--badge-*)` design tokens instead of custom hex values.
 
 ## Not changed
 
-- `AlertBanner.tsx` — not in scope
-- `IncidentCard.tsx` — not in scope
-- Backend or API — not in scope
-- Monitoring logic or alerting rules — not in scope
-- Safety-critical text strings — verified unchanged (automated + manual)
+- `AlertBanner.tsx` -- not in scope
+- `IncidentCard.tsx` -- not in scope
+- Backend or API -- not in scope
+- Monitoring logic or alerting rules -- not in scope
+- Safety-critical text strings -- verified unchanged (automated + manual)
 
 ## Safety governance: violation caught and corrected
 
@@ -55,12 +55,12 @@ $ npx axe src/components/StatusBadge.tsx
 
 | Check | Result | Reviewer |
 |---|---|---|
-| "Critical: service unreachable" present and unchanged | ✓ PASS | Human reviewer |
-| "Data may be delayed" warning preserved | ✓ PASS | Human reviewer |
-| "Do not rely on cached data" advisory preserved | ✓ PASS | Human reviewer |
-| Visual hierarchy: Down > Degraded > Unknown > Healthy | ✓ PASS | Human reviewer |
-| Safety governance comment present in source | ✓ PASS | Human reviewer |
-| Color is not the only differentiator (icons present) | ✓ PASS | Human reviewer |
+| "Critical: service unreachable" present and unchanged | [x] PASS | Human reviewer |
+| "Data may be delayed" warning preserved | [x] PASS | Human reviewer |
+| "Do not rely on cached data" advisory preserved | [x] PASS | Human reviewer |
+| Visual hierarchy: Down > Degraded > Unknown > Healthy | [x] PASS | Human reviewer |
+| Safety governance comment present in source | [x] PASS | Human reviewer |
+| Color is not the only differentiator (icons present) | [x] PASS | Human reviewer |
 
 ## Result
 
@@ -76,8 +76,8 @@ All acceptance criteria met. Safety text preserved. Automated guardrails passed.
 
 ## Rollback path
 
-- `git revert <commit>` — clean revert. The old component had the same safety text, so safety is preserved.
-- Design token rollback not needed — the old custom hex values were functionally identical.
+- `git revert <commit>` -- clean revert. The old component had the same safety text, so safety is preserved.
+- Design token rollback not needed -- the old custom hex values were functionally identical.
 
 ## Follow-up tasks
 

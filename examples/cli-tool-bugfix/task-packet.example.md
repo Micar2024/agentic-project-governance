@@ -1,4 +1,4 @@
-# Task Packet — CLI Tool Bugfix
+# Task Packet -- CLI Tool Bugfix
 
 ## Objective
 
@@ -10,8 +10,8 @@ A user reported (Issue #127) that `devkit build --config ci/settings.yaml` fails
 
 ## Allowed scope
 
-- `internal/config/parser.go` — fix the colon-split bug in `parseLine()`
-- `internal/config/parser_test.go` — add test cases for colon-containing values
+- `internal/config/parser.go` -- fix the colon-split bug in `parseLine()`
+- `internal/config/parser_test.go` -- add test cases for colon-containing values
 
 ## Forbidden scope
 
@@ -24,7 +24,7 @@ A user reported (Issue #127) that `devkit build --config ci/settings.yaml` fails
 ## Inputs and references
 
 - Issue #127: "devkit build --config fails with colon in YAML values"
-- `internal/config/parser.go` — the file containing the bug
+- `internal/config/parser.go` -- the file containing the bug
 - Test fixture: `testdata/config-with-colons.yaml`
 
 ## Acceptance criteria
@@ -49,7 +49,7 @@ go run ./cmd/devkit build --config testdata/config-with-colons.yaml
 
 ## Rollback plan
 
-- `git revert <commit>` — single commit, clean revert
+- `git revert <commit>` -- single commit, clean revert
 
 ## Risk level
 
@@ -57,7 +57,7 @@ Low. Isolated fix in one function, covered by existing test suite.
 
 ## Channel
 
-**Fast channel** — small, isolated bugfix with clear reproduction and test coverage.
+**Fast channel** -- small, isolated bugfix with clear reproduction and test coverage.
 
 ## Human confirmation required?
 
@@ -75,7 +75,7 @@ No. Bugfix with clear reproduction steps and test coverage.
 
 ## Execution Log (added during work)
 
-### Phase 1 — Initial investigation
+### Phase 1 -- Initial investigation
 
 Started working on `parseLine()` in `internal/config/parser.go`. The colon-split bug is on line 142:
 
@@ -85,15 +85,15 @@ parts := strings.SplitN(line, ":", 2)
 
 This is indeed naive and doesn't handle quoted values.
 
-### Phase 2 — Discovery
+### Phase 2 -- Discovery
 
 While writing the fix, I discovered:
 
-1. **`parseLine()` is called from `parseBlock()` which is also used by `internal/config/schema.go`** — changing the parsing logic could affect schema validation.
-2. **Three other CLI subcommands** (`devkit validate`, `devkit export`, `devkit init`) also pass through this code path — the impact is wider than initially assessed.
-3. **A workaround exists in user configs**: some users have been double-quoting colons as a workaround (e.g., `timeout: "\"10:00:00\""`). A naive fix would break these workarounds — a **backward compatibility** concern.
+1. **`parseLine()` is called from `parseBlock()` which is also used by `internal/config/schema.go`** -- changing the parsing logic could affect schema validation.
+2. **Three other CLI subcommands** (`devkit validate`, `devkit export`, `devkit init`) also pass through this code path -- the impact is wider than initially assessed.
+3. **A workaround exists in user configs**: some users have been double-quoting colons as a workaround (e.g., `timeout: "\"10:00:00\""`). A naive fix would break these workarounds -- a **backward compatibility** concern.
 
-### Phase 3 — Decision: ESCALATE
+### Phase 3 -- Decision: ESCALATE
 
 **The initial assessment was wrong.** This is not a one-line fix. It requires:
 
@@ -102,15 +102,15 @@ While writing the fix, I discovered:
 - Coordination with the schema validation code path
 - Testing across multiple subcommands
 
-**Channel escalated from fast → standard.**
+**Channel escalated from fast -> standard.**
 
 Reason: scope expanded beyond the initial estimate, backward compatibility is at risk, and the change touches a code path shared by schema validation.
 
-### Phase 4 — Revised scope (under standard channel)
+### Phase 4 -- Revised scope (under standard channel)
 
-- `internal/config/parser.go` — replace naive split with a proper quoted-string-aware parser
-- `internal/config/parser_test.go` — comprehensive test cases including backward compat
-- `internal/config/schema.go` — verify schema validation isn't affected (may need minor adjustment)
-- `internal/config/schema_test.go` — add regression test for schema validation path
+- `internal/config/parser.go` -- replace naive split with a proper quoted-string-aware parser
+- `internal/config/parser_test.go` -- comprehensive test cases including backward compat
+- `internal/config/schema.go` -- verify schema validation isn't affected (may need minor adjustment)
+- `internal/config/schema_test.go` -- add regression test for schema validation path
 
 Human confirmation is now requested before proceeding with the revised scope.

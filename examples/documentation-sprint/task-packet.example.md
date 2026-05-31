@@ -1,4 +1,4 @@
-# Task Packet — Documentation Sprint (Multi-Task)
+# Task Packet -- Documentation Sprint (Multi-Task)
 
 ## Objective
 
@@ -53,7 +53,7 @@ Update the authentication reference to document the new API key scopes and servi
 ### Allowed scope
 
 - `docs/reference/auth.md` (update existing)
-- `docs/reference/auth-v1-v2-migration.md` (new file — migration guide)
+- `docs/reference/auth-v1-v2-migration.md` (new file -- migration guide)
 
 ### Forbidden scope
 
@@ -131,27 +131,27 @@ Not required for individual docs tasks. Required for the consolidated release ac
 
 ## Sprint Execution Log (added during work)
 
-### DOC-1 — COMPLETED
+### DOC-1 -- COMPLETED
 
 - Created `docs/guides/rate-limiting.md` with 6 sections: Overview, Rate Limit Headers, Handling 429 Responses, Best Practices, Examples, FAQ
 - Included code examples in Python (exponential backoff), JavaScript (axios interceptor), and Go (retry middleware)
 - Updated `docs/guides/README.md` with link to new guide
-- Verification: 6 sections, 3 code examples, link present ✓
+- Verification: 6 sections, 3 code examples, link present [x]
 
-### DOC-2 — COMPLETED
+### DOC-2 -- COMPLETED
 
 - Updated `docs/reference/auth.md` with v2 scope documentation and service account token section
 - Created `docs/reference/auth-v1-v2-migration.md` with 5-step migration guide
 - Preserved all v1 authentication documentation (v1 is still supported)
-- Verification: v2 scopes documented, service account section present, migration guide complete ✓
+- Verification: v2 scopes documented, service account section present, migration guide complete [x]
 
-### DOC-3 — COMPLETED
+### DOC-3 -- COMPLETED
 
 - Added v2.1.0 section at top of `CHANGELOG.md`
 - 4 subsections: Added (3 entries), Changed (2 entries), Fixed (4 entries), Deprecated (1 entry)
-- All entries reference issue/PR numbers (#201–#210)
+- All entries reference issue/PR numbers (#201-#210)
 - Date: 2026-05-30
-- Verification: v2.1.0 is first entry, 4 subsection categories present ✓
+- Verification: v2.1.0 is first entry, 4 subsection categories present [x]
 
 ### Sprint summary
 

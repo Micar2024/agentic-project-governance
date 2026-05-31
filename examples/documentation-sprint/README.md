@@ -1,4 +1,4 @@
-# Documentation Sprint — Multi-Task Parallel Example
+# Documentation Sprint -- Multi-Task Parallel Example
 
 A fictional multi-task documentation sprint demonstrating parallel task execution, independent acceptance criteria per task, and a consolidated acceptance report for a single release.
 
@@ -6,7 +6,7 @@ A fictional multi-task documentation sprint demonstrating parallel task executio
 
 - Multiple documentation tasks executed in parallel as part of one sprint
 - Each task has its own independent acceptance criteria
-- Tasks are related (all docs) but scoped independently — no coupling
+- Tasks are related (all docs) but scoped independently -- no coupling
 - Consolidated acceptance report aggregates all task results
 - Release readiness assessment: "are all docs ready to ship together?"
 

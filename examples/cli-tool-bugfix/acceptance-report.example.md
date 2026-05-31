@@ -1,4 +1,4 @@
-# Acceptance Report — CLI Tool Bugfix (Escalated)
+# Acceptance Report -- CLI Tool Bugfix (Escalated)
 
 ## Requested task
 
@@ -10,22 +10,22 @@ Originally assessed as low-risk (fast channel). Escalated to medium-risk (standa
 
 - Replaced naive `strings.SplitN(line, ":", 2)` in `parseLine()` with a quoted-string-aware parser that correctly handles quoted values, nested quotes, and escape sequences.
 - Added 12 test cases covering: quoted colons, unquoted colons, escaped colons, backward compat workarounds (double-quoted values), and edge cases (empty values, unbalanced quotes).
-- Adjusted `validateConfigBlock()` in `internal/config/schema.go` to use the updated parser return type — a minor signature change.
+- Adjusted `validateConfigBlock()` in `internal/config/schema.go` to use the updated parser return type -- a minor signature change.
 - Added regression test for schema validation path with colon-containing values.
 
 ## Not changed
 
-- `cmd/` — no CLI entry point changes
-- `go.mod` / `go.sum` — no dependency changes
-- Documentation — separate task recommended, not in this scope
-- CI/CD configuration — not touched
+- `cmd/` -- no CLI entry point changes
+- `go.mod` / `go.sum` -- no dependency changes
+- Documentation -- separate task recommended, not in this scope
+- CI/CD configuration -- not touched
 
 ## Channel escalation summary
 
 | Phase | Channel | Risk | Trigger |
 |---|---|---|---|
 | Initial assessment | Fast | Low | One-line fix expected |
-| During execution | **STOP** | — | Discovered schema validation coupling |
+| During execution | **STOP** | -- | Discovered schema validation coupling |
 | Revised assessment | Standard | Medium | Cross-cutting impact + backward compat |
 | Final delivery | Standard | Medium | All standard channel gates passed |
 
@@ -66,13 +66,13 @@ All acceptance criteria met. All tests pass. Backward compatibility maintained w
 
 ## Residual risks
 
-- Windows path separator (`\`) interaction with quote escaping — not tested on Windows.
+- Windows path separator (`\`) interaction with quote escaping -- not tested on Windows.
 - CI pipelines that treat stderr output as errors may be affected by the new deprecation warning. Mitigation: the warning is printed only when the old workaround pattern is detected, which is rare.
-- Non-UTF-8 config files — not tested. The existing test suite only covers UTF-8.
+- Non-UTF-8 config files -- not tested. The existing test suite only covers UTF-8.
 
 ## Rollback path
 
-- `git revert <commit>` — single commit reverts all changes
+- `git revert <commit>` -- single commit reverts all changes
 - Alternatively, revert just the parser change and keep the test additions (tests would fail, flagging the unreverted bug)
 
 ## Follow-up tasks

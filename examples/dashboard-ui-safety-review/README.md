@@ -1,4 +1,4 @@
-# Dashboard UI Safety Review — Human Approval Gate Example
+# Dashboard UI Safety Review -- Human Approval Gate Example
 
 A fictional dashboard UI change involving user-visible risk indicators and alert text. Demonstrates the governance requirement that **human approval is mandatory** before merging changes that affect safety-critical user-facing content.
 
@@ -7,7 +7,7 @@ A fictional dashboard UI change involving user-visible risk indicators and alert
 - A UI change that touches user-visible risk indicators and alert messages
 - Automated checks catching a violation of safety-text requirements
 - The governance rule: "never weaken or obscure risk warnings for aesthetic reasons"
-- Human approval as a **mandatory merge gate** — not optional, not bypassable
+- Human approval as a **mandatory merge gate** -- not optional, not bypassable
 - Concrete acceptance criteria for safety-related UI changes
 
 ## Governance concepts covered

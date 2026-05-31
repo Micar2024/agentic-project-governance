@@ -1,4 +1,4 @@
-# Acceptance Report — Documentation Sprint (Multi-Task)
+# Acceptance Report -- Documentation Sprint (Multi-Task)
 
 ## Requested tasks
 
@@ -14,7 +14,7 @@ All tasks defined in `task-packet.example.md`.
 
 ## Completed work
 
-### DOC-1: Rate Limiting Guide — PASS
+### DOC-1: Rate Limiting Guide -- PASS
 
 - Created `docs/guides/rate-limiting.md` with 6 sections covering rate limit headers, 429 handling, best practices, and a FAQ.
 - Included 3 code examples: Python (exponential backoff), JavaScript (axios interceptor), Go (retry middleware).
@@ -23,14 +23,14 @@ All tasks defined in `task-packet.example.md`.
 Verification:
 ```bash
 $ grep -c "^##" docs/guides/rate-limiting.md
-6  ✓ (>= 5 required)
+6  [x] (>= 5 required)
 $ grep -c '```' docs/guides/rate-limiting.md
-6  ✓ (3 code blocks)
+6  [x] (3 code blocks)
 $ grep -q "rate-limiting.md" docs/guides/README.md
-✓ (link present)
+[x] (link present)
 ```
 
-### DOC-2: Authentication Docs — PASS
+### DOC-2: Authentication Docs -- PASS
 
 - Updated `docs/reference/auth.md` with v2 scope documentation (`read:usage`, `write:config`, `admin:keys`) and service account token section.
 - Created `docs/reference/auth-v1-v2-migration.md` with 5-step migration guide.
@@ -43,10 +43,10 @@ PASS
 $ grep -q "service account" docs/reference/auth.md && echo "PASS"
 PASS
 $ grep -c "^##" docs/reference/auth-v1-v2-migration.md
-5  ✓ (5 steps)
+5  [x] (5 steps)
 ```
 
-### DOC-3: Changelog — PASS
+### DOC-3: Changelog -- PASS
 
 - Added v2.1.0 section at top of `CHANGELOG.md` following Keep a Changelog format.
 - 4 subsections: Added (3 entries: #201, #203, #205), Changed (2 entries: #202, #207), Fixed (4 entries: #204, #206, #208, #210), Deprecated (1 entry: #209).
@@ -55,30 +55,30 @@ $ grep -c "^##" docs/reference/auth-v1-v2-migration.md
 Verification:
 ```bash
 $ grep -A1 "^## " CHANGELOG.md | head -2
-## [2.1.0] - 2026-05-30  ✓
+## [2.1.0] - 2026-05-30  [x]
 $ grep -c "^### " CHANGELOG.md
-4  ✓ (Added/Changed/Fixed/Deprecated)
+4  [x] (Added/Changed/Fixed/Deprecated)
 ```
 
 ## Not changed
 
-- `src/` — no application code (docs-only sprint)
-- Rate limiting implementation — not touched
-- Authentication implementation — not touched
-- CI/CD configuration — not changed
-- Any code that generates documentation — not changed
+- `src/` -- no application code (docs-only sprint)
+- Rate limiting implementation -- not touched
+- Authentication implementation -- not touched
+- CI/CD configuration -- not changed
+- Any code that generates documentation -- not changed
 
 ## Per-task results
 
 | Task | Status | Evidence | Risks |
 |---|---|---|---|
-| DOC-1 | ✓ PASS | 6 sections, 3 examples, link present | Examples may need updates in v2.2 |
-| DOC-2 | ✓ PASS | 3 scopes, service account section, migration guide | Migration guide assumes SDK v3+ |
-| DOC-3 | ✓ PASS | 4 categories, 10 entries, all referenced | Changelog not exhaustive |
+| DOC-1 | [x] PASS | 6 sections, 3 examples, link present | Examples may need updates in v2.2 |
+| DOC-2 | [x] PASS | 3 scopes, service account section, migration guide | Migration guide assumes SDK v3+ |
+| DOC-3 | [x] PASS | 4 categories, 10 entries, all referenced | Changelog not exhaustive |
 
 ## Consolidated result
 
-**ALL PASS — RELEASE READY**
+**ALL PASS -- RELEASE READY**
 
 All 3 documentation tasks pass their individual acceptance criteria. No cross-task contamination. No scope violations. Ready for consolidated release as v2.1.0 documentation.
 
@@ -86,18 +86,18 @@ All 3 documentation tasks pass their individual acceptance criteria. No cross-ta
 
 | Criterion | Status |
 |---|---|
-| All tasks pass individual acceptance | ✓ Yes (3/3) |
-| No file conflicts between tasks | ✓ Yes (no overlapping files) |
-| No forbidden scope touched | ✓ Yes |
-| All verification evidence provided | ✓ Yes |
-| Known risks documented | ✓ Yes |
-| Rollback paths clear | ✓ Yes |
+| All tasks pass individual acceptance | [x] Yes (3/3) |
+| No file conflicts between tasks | [x] Yes (no overlapping files) |
+| No forbidden scope touched | [x] Yes |
+| All verification evidence provided | [x] Yes |
+| Known risks documented | [x] Yes |
+| Rollback paths clear | [x] Yes |
 | Human approval for consolidated release | Pending (see below) |
 
 ## Residual risks (per-task)
 
 - **DOC-1**: Rate limiting guide references API v2.1 behavior. If rate limits change in v2.2, the examples will be outdated. Mitigation: version annotation in the guide header.
-- **DOC-2**: Migration guide covers SDK v3+ only. Users on SDK v2 need a different migration path — documented in prerequisites section. Separate guide may be needed.
+- **DOC-2**: Migration guide covers SDK v3+ only. Users on SDK v2 need a different migration path -- documented in prerequisites section. Separate guide may be needed.
 - **DOC-3**: Changelog covers known changes. Late additions to v2.1.0 release may not be in the changelog. Mitigation: changelog is reviewed as part of the release process.
 
 ## Rollback paths
@@ -121,7 +121,7 @@ All 3 documentation tasks pass their individual acceptance criteria. No cross-ta
 
 ## Human approval status
 
-**PENDING — awaiting consolidated release review**
+**PENDING -- awaiting consolidated release review**
 
 Individual tasks were fast-channel (no human approval required for docs-only changes). The consolidated release requires human approval because:
 

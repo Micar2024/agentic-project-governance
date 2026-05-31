@@ -1,4 +1,4 @@
-# PR Review Packet — Dashboard UI Safety Review
+# PR Review Packet -- Dashboard UI Safety Review
 
 ## Summary
 
@@ -6,7 +6,7 @@ Standardizes the SitePulse dashboard's `StatusBadge` component to use design sys
 
 ## Linked task packet
 
-`task-packet.example.md` — includes the safety violation catch and correction log.
+`task-packet.example.md` -- includes the safety violation catch and correction log.
 
 ## Safety governance gate (MANDATORY REVIEW)
 
@@ -18,9 +18,9 @@ This PR touches `src/components/StatusBadge.tsx`, which contains safety-critical
 
 | String | Status | Verified by |
 |---|---|---|
-| `"Critical: service unreachable"` | **UNCHANGED** ✓ | `check-safety-text.js` + manual |
-| `"Data may be delayed — verify manually"` | **UNCHANGED** ✓ | `check-safety-text.js` + manual |
-| `"Do not rely on cached data during degraded state"` | **UNCHANGED** ✓ | `check-safety-text.js` + manual |
+| `"Critical: service unreachable"` | **UNCHANGED** [x] | `check-safety-text.js` + manual |
+| `"Data may be delayed -- verify manually"` | **UNCHANGED** [x] | `check-safety-text.js` + manual |
+| `"Do not rely on cached data during degraded state"` | **UNCHANGED** [x] | `check-safety-text.js` + manual |
 
 ### Safety-first design decision
 
@@ -37,8 +37,8 @@ The design system v2.1 badge spec recommends short labels (max 25 characters). T
 ## Scope compliance
 
 - Within allowed scope: Yes
-- Touched forbidden scope: **No** — `AlertBanner.tsx`, `IncidentCard.tsx`, backend, API untouched
-- Safety text modified: **No** — all 3 strings preserved verbatim
+- Touched forbidden scope: **No** -- `AlertBanner.tsx`, `IncidentCard.tsx`, backend, API untouched
+- Safety text modified: **No** -- all 3 strings preserved verbatim
 
 ## Verification evidence
 
@@ -47,25 +47,25 @@ The design system v2.1 badge spec recommends short labels (max 25 characters). T
 ```bash
 $ npm test -- src/components/StatusBadge.test.tsx
  PASS  src/components/StatusBadge.test.tsx
-  ✓ renders healthy badge (12ms)
-  ✓ renders degraded badge with safety text (8ms)
-  ✓ renders down badge with "Critical:" prefix (7ms)
-  ✓ renders unknown badge with manual verify warning (6ms)
-  ✓ uses design system color tokens (5ms)
-  ✓ applies correct typography classes (4ms)
-  ✓ preserves all safety-critical text verbatim (3ms)
+  [x] renders healthy badge (12ms)
+  [x] renders degraded badge with safety text (8ms)
+  [x] renders down badge with "Critical:" prefix (7ms)
+  [x] renders unknown badge with manual verify warning (6ms)
+  [x] uses design system color tokens (5ms)
+  [x] applies correct typography classes (4ms)
+  [x] preserves all safety-critical text verbatim (3ms)
 
 Test Suites: 1 passed, 1 total
 Tests:       7 passed, 7 total
 
 $ node scripts/check-safety-text.js
-PASS: "Critical: service unreachable" — preserved verbatim
-PASS: "Data may be delayed — verify manually" — preserved verbatim
-PASS: "Do not rely on cached data during degraded state" — preserved verbatim
+PASS: "Critical: service unreachable" -- preserved verbatim
+PASS: "Data may be delayed -- verify manually" -- preserved verbatim
+PASS: "Do not rely on cached data during degraded state" -- preserved verbatim
 All 3 safety strings verified. No violations.
 
 $ npx chromatic test --component StatusBadge
-✓ StatusBadge: 4 stories, 0 visual changes (baseline matched)
+[x] StatusBadge: 4 stories, 0 visual changes (baseline matched)
   - Healthy state: no change
   - Degraded state: no change
   - Down state: no change
@@ -79,7 +79,7 @@ $ npx axe src/components/StatusBadge.tsx
 
 - [x] Down state is still visually distinct (red background + "Critical:" prefix + icon)
 - [x] Color contrast ratios meet WCAG AA for all badge states
-- [x] Icons are present alongside color — color is not the only differentiator
+- [x] Icons are present alongside color -- color is not the only differentiator
 - [x] Safety governance comment is present in the source code
 
 ## Known risks
@@ -89,10 +89,10 @@ $ npx axe src/components/StatusBadge.tsx
 
 ## Out-of-scope items
 
-- `AlertBanner.tsx` — not touched. Alert text is unchanged.
-- `IncidentCard.tsx` — not touched. Severity display is unchanged.
-- Backend monitoring logic — not touched.
-- Design system v2.1 itself — not in scope (consumed as-is).
+- `AlertBanner.tsx` -- not touched. Alert text is unchanged.
+- `IncidentCard.tsx` -- not touched. Severity display is unchanged.
+- Backend monitoring logic -- not touched.
+- Design system v2.1 itself -- not in scope (consumed as-is).
 
 ## Reviewer checklist
 
@@ -114,7 +114,7 @@ This PR cannot be merged until a human reviewer has:
 2. Confirmed the visual hierarchy (Down > Degraded > Unknown > Healthy) is preserved
 3. Signed off in the acceptance report
 
-The human approval requirement is **not bypassable** by automated checks alone. This is by design — safety-critical text requires human judgment.
+The human approval requirement is **not bypassable** by automated checks alone. This is by design -- safety-critical text requires human judgment.
 
 ## What this packet does not prove
 

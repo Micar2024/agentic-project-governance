@@ -1,4 +1,4 @@
-# PR Review Packet — Documentation Sprint (Multi-Task)
+# PR Review Packet -- Documentation Sprint (Multi-Task)
 
 ## Summary
 
@@ -12,7 +12,7 @@ All tasks are independent, low-risk, documentation-only changes. Each was execut
 
 ## Linked task packet
 
-`task-packet.example.md` — contains all 3 task definitions with individual acceptance criteria.
+`task-packet.example.md` -- contains all 3 task definitions with individual acceptance criteria.
 
 ## Why a single PR for 3 tasks?
 
@@ -56,9 +56,9 @@ Combining them into a single PR is acceptable because:
 
 | Task | Within scope | Forbidden touched | Independent? |
 |---|---|---|---|
-| DOC-1 | Yes | No | Yes — only 2 files |
-| DOC-2 | Yes | No | Yes — no overlap with DOC-1 or DOC-3 |
-| DOC-3 | Yes | No | Yes — only 1 file |
+| DOC-1 | Yes | No | Yes -- only 2 files |
+| DOC-2 | Yes | No | Yes -- no overlap with DOC-1 or DOC-3 |
+| DOC-3 | Yes | No | Yes -- only 1 file |
 
 ## Verification evidence
 
@@ -123,16 +123,16 @@ Manual: Keep a Changelog format followed. All entries reference issues/PRs. No e
 ## Known risks
 
 - Rate limiting guide examples may need updating if the rate limit endpoint changes in v2.2. Mitigation: examples reference the documented API version (`v2.1`).
-- Auth migration guide assumes users are on SDK v3+. Users on SDK v2 need a different migration path — this is called out in the "Prerequisites" section.
+- Auth migration guide assumes users are on SDK v3+. Users on SDK v2 need a different migration path -- this is called out in the "Prerequisites" section.
 - Changelog covers v2.1.0 only. If v2.0.x patch releases are cut after this, they won't appear above v2.1.0 in the changelog because v2.1.0 is a newer version.
 
 ## Out-of-scope items
 
-- Application code (`src/`) — not touched (docs-only sprint)
-- API implementation of rate limiting — not changed
-- Authentication implementation — not changed
-- Any code that generates the changelog — not touched
-- CI/CD — not changed
+- Application code (`src/`) -- not touched (docs-only sprint)
+- API implementation of rate limiting -- not changed
+- Authentication implementation -- not changed
+- Any code that generates the changelog -- not touched
+- CI/CD -- not changed
 
 ## Reviewer checklist
 
@@ -142,7 +142,7 @@ Manual: Keep a Changelog format followed. All entries reference issues/PRs. No e
 - [x] Each task's verification evidence is sufficient
 - [x] Risks are stated per task
 - [x] No secrets or private data included
-- [x] No scope creep — each task stayed within its boundary
+- [x] No scope creep -- each task stayed within its boundary
 - [x] Consolidated PR is justified (same release, same type)
 
 ## What this packet does not prove

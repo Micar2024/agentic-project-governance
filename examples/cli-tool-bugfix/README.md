@@ -1,4 +1,4 @@
-# CLI Tool Bugfix — Channel Escalation Example
+# CLI Tool Bugfix -- Channel Escalation Example
 
 A fictional CLI tool bugfix that starts as a low-risk fast-channel change, then gets escalated to standard channel when unexpected complexity is discovered during execution.
 
@@ -24,4 +24,4 @@ Initially low (small bugfix). Escalated to medium during execution due to config
 
 ## Channel decision
 
-Started as fast channel → escalated to standard channel (requires PR review + acceptance report before merge).
+Started as fast channel -> escalated to standard channel (requires PR review + acceptance report before merge).

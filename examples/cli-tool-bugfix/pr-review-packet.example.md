@@ -1,4 +1,4 @@
-# PR Review Packet — CLI Tool Bugfix (Escalated)
+# PR Review Packet -- CLI Tool Bugfix (Escalated)
 
 ## Summary
 
@@ -6,7 +6,7 @@ Fixes the `--config` flag bug in `devkit` where YAML values containing colons we
 
 ## Linked task packet
 
-`task-packet.example.md` — includes the escalation log documenting why the channel changed from fast to standard.
+`task-packet.example.md` -- includes the escalation log documenting why the channel changed from fast to standard.
 
 ## Channel escalation record
 
@@ -62,23 +62,23 @@ Build completed successfully. Config loaded: 12 keys.
 
 Manual verification:
 
-- [x] Tested `devkit build` with the reported failing config — now works correctly
-- [x] Tested `devkit validate` with colon-containing configs — no regression
-- [x] Tested `devkit export` — output unchanged
-- [x] Tested `devkit init` — no impact
+- [x] Tested `devkit build` with the reported failing config -- now works correctly
+- [x] Tested `devkit validate` with colon-containing configs -- no regression
+- [x] Tested `devkit export` -- output unchanged
+- [x] Tested `devkit init` -- no impact
 - [x] Verified backward compat: existing configs with double-quote workarounds still parse correctly
 
 ## Known risks
 
 - Users who relied on the buggy behavior (unquoted colons splitting at the wrong position) may have configs that now parse differently. Mitigation: the backward compat test cases cover the known workaround patterns. A deprecation warning is emitted when the old workaround pattern is detected.
-- The new parser is slightly stricter about quote pairing — unbalanced quotes now produce a clear error instead of silent corruption. This is intentional and documented.
+- The new parser is slightly stricter about quote pairing -- unbalanced quotes now produce a clear error instead of silent corruption. This is intentional and documented.
 
 ## Out-of-scope items
 
-- `cmd/` — no CLI entry point changes
-- `go.mod` / `go.sum` — no dependency changes
-- Documentation — not in scope (separate task recommended)
-- CI/CD configuration — not touched
+- `cmd/` -- no CLI entry point changes
+- `go.mod` / `go.sum` -- no dependency changes
+- Documentation -- not in scope (separate task recommended)
+- CI/CD configuration -- not touched
 
 ## Reviewer checklist
 
