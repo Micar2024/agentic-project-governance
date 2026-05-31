@@ -54,7 +54,7 @@ Or:
 
 If verification was not possible, say so and explain why.
 
-## 5. Result
+## 6. Result
 
 Choose one:
 
@@ -62,14 +62,14 @@ Choose one:
 - **HOLD**: Work is done but requires human review, additional verification, or has open questions.
 - **FAIL**: Acceptance criteria not met, evidence insufficient, or blocking issues found.
 
-## 6. Residual risks
+## 7. Residual risks
 
 What risks remain after completion? Examples:
 
 - Retry logic may need tuning based on production metrics
 - FAQ entries are English-only; translations needed for other locales
 
-## 7. Rollback path
+## 8. Rollback path
 
 How to undo the change if needed. Examples:
 
@@ -77,7 +77,7 @@ How to undo the change if needed. Examples:
 - Delete `docs/faq.md` and remove README link
 - Restore `src/auth/login.ts` from backup
 
-## 8. Follow-up tasks
+## 9. Follow-up tasks
 
 What open items or next actions exist? Examples:
 
@@ -85,7 +85,7 @@ What open items or next actions exist? Examples:
 - Add FAQ translations
 - Monitor login error rates
 
-## 9. Human approval status
+## 10. Human approval status
 
 - Approved: Human has reviewed and approved.
 - Pending: Awaiting human review.
