@@ -143,3 +143,4 @@ The agent must stop and request human input when:
 - **Reason**: [one sentence]
 - **Required follow-up**: [list any remaining actions, or "none"]
 - **Human approval obtained**: [Yes / No / N/A]
+
