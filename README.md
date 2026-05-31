@@ -78,6 +78,10 @@ flowchart LR
   F --> G[Human decision]
 ```
 
+## Workflow diagrams
+
+For detailed channel selection, escalation triggers, and human approval gates, see [docs/workflow.md](docs/workflow.md).
+
 ## Repository layout
 
 ```text
