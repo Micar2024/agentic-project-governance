@@ -11,9 +11,9 @@ Add a FAQ section to the fictional documentation website. Task packet: `task-pac
 
 ## Not changed
 
-- Application code (`src/`) — out of scope.
-- Deployment configuration — not requested.
-- Dependencies — no changes needed.
+- Application code (`src/`) -- out of scope.
+- Deployment configuration -- not requested.
+- Dependencies -- no changes needed.
 
 ## Verification evidence
 
@@ -56,4 +56,4 @@ PASS
 
 ## Human approval status
 
-Pending — awaiting maintainer review before merge.
+Pending -- awaiting maintainer review before merge.

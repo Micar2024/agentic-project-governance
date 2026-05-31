@@ -82,6 +82,10 @@ flowchart LR
 
 For detailed channel selection, escalation triggers, and human approval gates, see [docs/workflow.md](docs/workflow.md).
 
+## Template validation
+
+For checklists to verify task packets, PR review packets, and acceptance reports, see [docs/template-validation-guide.md](docs/template-validation-guide.md).
+
 ## Repository layout
 
 ```text
