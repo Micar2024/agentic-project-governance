@@ -109,6 +109,7 @@ releases/    Release notes
 | `templates/task-list.md` | Task tracking table |
 | `templates/sprint-plan.md` | Sprint planning template |
 | `templates/postmortem.md` | Post-incident review |
+| `templates/design-review.md` | Design review for UX, copy, safety, and interaction changes |
 
 ## Examples
 
