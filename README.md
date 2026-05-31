@@ -123,22 +123,15 @@ Use fictional examples unless you have explicit permission to publish real proje
 
 ## Roadmap
 
-### v0.1.0 (current)
-- Public README with positioning and safety boundaries
-- Generic role model and workflow documentation
-- Task packet, PR review packet, acceptance report templates
-- Handoff, risk register, project current templates
-- Fictional minimal example
-- GitHub issue and PR templates
-- MIT license, CONTRIBUTING, SECURITY, CODE_OF_CONDUCT
-
-### v0.2.0 (planned)
-- Additional templates: design review, incident response, dependency audit
-- More fictional examples: multi-module task, bug fix, documentation sprint
-- Template validation guide
-- Workflow diagrams for fast channel vs standard channel
+### v0.2.0 (current)
+- Additional fictional examples: channel escalation, human approval, multi-task aggregation
+- Workflow diagrams for fast channel vs standard channel with Mermaid
+- Template validation guide for task packets, PR review packets, and acceptance reports
+- Design review template for UX, copy, safety, and interaction changes
+- ASCII-only Markdown cleanup across all files
 
 ### v0.3.0 (planned)
+- Dependency audit template
 - GitHub Action for template validation
 - Schema for task packets
 - Multi-language README translations
@@ -150,7 +143,7 @@ See `CONTRIBUTING.md`. We accept public, sanitized governance templates and fict
 
 ## Status
 
-v0.1.0 -- draft template release. Not a runtime, not a production system, not an enterprise compliance framework, and not a production safety certification.
+v0.2.0 -- usability and review workflow update. Not a runtime, not a production system, not an enterprise compliance framework, and not a production safety certification.
 
 ## License
 
